@@ -1,0 +1,34 @@
+# Archivos de compilación
+*.o
+*.obj
+*.so
+*.a
+*.out
+*.exe
+*.gch
+*.d
+
+# Archivos de dependencias y de depuración
+*.dSYM/
+*.stackdump
+*.core
+core
+vgcore.*
+
+# Archivos de respaldo y temporales
+*~
+*.swp
+*.bak
+*.tmp
+
+# Archivos de logs
+*.log
+
+# Archivos generados por el IDE
+.vscode/
+.idea/
+*.code-workspace
+
+# Archivos de GTK y otros recursos temporales
+gtkrc*
+.cache/
