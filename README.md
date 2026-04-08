@@ -151,6 +151,40 @@ This project is a combination of systems programming, security analysis, and GUI
 5. GUI thread presents alerts and live information to the user in dedicated windows 🖥️.
 6. Shutdown sequence cancels threads, joins them safely, and frees all shared resources 🧹.
 
+## How to Run 🚀
+
+This project is designed for Linux/UNIX environments because it depends on `/proc` and `inotify`.
+
+1. Install build dependencies (Ubuntu/Debian):
+
+```bash
+sudo apt update
+sudo apt install -y build-essential pkg-config libgtk-3-dev libssl-dev libx11-dev
+```
+
+2. Go to the project root and compile:
+
+```bash
+gcc Interfaz.c -o border_guard $(pkg-config --cflags --libs gtk+-3.0) -lssl -lcrypto -pthread
+```
+
+3. Run the application:
+
+```bash
+./border_guard
+```
+
+4. Optional (recommended for full monitoring permissions):
+
+```bash
+sudo ./border_guard
+```
+
+Quick notes:
+- The GUI opens with buttons for process, port, and file alerts.
+- File monitoring is oriented to mounted paths (especially `/media`).
+- If `pkg-config` cannot find GTK, verify `libgtk-3-dev` is installed.
+
 ## Final Notes ✅🏰
 
 Border Guard Antivirus is both a functional defensive platform and a practical systems-security lab 🧪. Its strength comes from combining process telemetry, filesystem integrity analysis, and network surface monitoring into one coordinated real-time application 🛡️📡📁🧠.
